@@ -11,8 +11,8 @@ function format (key, value) {
   return `${key}=${escapeNewlines(value)}`
 }
 
-module.exports = async function updateDotenv (env) {
-  const filename = path.join(process.cwd(), '.env')
+module.exports = async function updateDotenv (env, filename) {
+  const filename = path.join(process.cwd(), filename || '.env')
 
   // Merge with existing values
   try {
